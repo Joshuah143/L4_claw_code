@@ -9,7 +9,7 @@ int triggerPin = 7;
 int echoPin = 6;
 int counter = 0;
 int lastCm[10] = {0};
-int state = 0; \\ 0 is open 1 is closed
+int state = 0; // 0 is open 1 is closed
 
 
 long readUltrasonicDistancecm() {
@@ -36,11 +36,11 @@ int all_close() {
 }
 
 void open(){
-  servo_9.write(0)
+  servo_9.write(0);
 }
 
 void close(){
-  servo_9.write(170)
+  servo_9.write(170);
 }
 
 
@@ -51,7 +51,7 @@ void setup()
 
 void loop()
 {
-  cm =  readUltrasonicDistance();
+  cm =  readUltrasonicDistancecm();
   lastCm[counter++ % 10] = cm;
   int temp =  all_close();
   if (temp == 1) {
